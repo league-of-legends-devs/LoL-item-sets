@@ -15,7 +15,7 @@ namespace Lol_item_sets
 	public partial class MainForm : MetroFramework.Forms.MetroForm
 	{
 		// The path to the key where Windows looks for startup applications
-		private RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+		private RegistryKey rkApp;
 		private string registryAppName = "LoL-item-sets-generator";
 		private string saveFolder = "Champions";
 
@@ -37,7 +37,16 @@ namespace Lol_item_sets
 		{
 			LoL_item_sets.Properties.Settings.Default.Reload();
 			this.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-			this.cbAutoLaunch.Checked = LoL_item_sets.Properties.Settings.Default.Launch_On_Windows_Start;
+			try
+			{
+				rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+				this.cbAutoLaunch.Checked = LoL_item_sets.Properties.Settings.Default.Launch_On_Windows_Start;
+			}
+			catch (Exception e)
+			{
+				MetroFramework.MetroMessageBox.Show(this, "Error when loading the key in the registry. Be sure to run the application as administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				this.cbAutoLaunch.Checked = false;
+			}
 			this.cbMinimizeOnClose.Checked = LoL_item_sets.Properties.Settings.Default.Minimize_When_Closed;
 			updateRefresh();
 		}
@@ -174,7 +183,7 @@ namespace Lol_item_sets
 
 		private void lkGoToWebsite_Click(object sender, EventArgs e)
 		{
-			System.Diagnostics.Process.Start("http://www.item-sets-generator.org/clicks/click.php?id=from_application");
+			System.Diagnostics.Process.Start("http://www.item-sets-generator.org/clicks/click.php?id=access_from_application");
 		}
 
 		private void lkGitHub_Click(object sender, EventArgs e)
@@ -190,7 +199,22 @@ namespace Lol_item_sets
 
 		private void niInTray_Click(object sender, EventArgs e)
 		{
+			// Do nothing
+		}
+
+		private void niInTray_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+
+		}
+
+		private void tsiShow_Click(object sender, EventArgs e)
+		{
 			this.Show();
+		}
+
+		private void tsiQuit_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
 		}
 
 		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -237,7 +261,7 @@ namespace Lol_item_sets
 			{
 				using (var client = new System.Net.WebClient())
 				{
-					client.DownloadFile("http://www.lol-item-sets-generator.org/clicks/click.php?id=dl_from_application", savePath);
+					client.DownloadFile("http://www.lol-item-sets-generator.org/clicks/click.php?id=dl_sets_from_application", savePath);
 					// This link is a redirection. It helps to count the downloads.
 				}
 			}

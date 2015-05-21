@@ -55,6 +55,9 @@
 			this.btnDownload = new MetroFramework.Controls.MetroButton();
 			this.btnChoosePath = new MetroFramework.Controls.MetroButton();
 			this.niInTray = new System.Windows.Forms.NotifyIcon(this.components);
+			this.cmInTray = new MetroFramework.Controls.MetroContextMenu(this.components);
+			this.tsiShow = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsiQuit = new System.Windows.Forms.ToolStripMenuItem();
 			this.tmRefreshCooldown = new System.Windows.Forms.Timer(this.components);
 			this.pnlMain.SuspendLayout();
 			this.tlpMain.SuspendLayout();
@@ -66,6 +69,7 @@
 			this.tlpAbout.SuspendLayout();
 			this.tlpNextRefresh.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
+			this.cmInTray.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// cbMinimizeOnClose
@@ -388,8 +392,32 @@
 			// 
 			this.niInTray.BalloonTipText = "I\'m minimized in your system tray :)";
 			this.niInTray.BalloonTipTitle = "LoL item sets";
-			this.niInTray.Text = "notifyIcon1";
+			this.niInTray.ContextMenuStrip = this.cmInTray;
+			this.niInTray.Text = "LoL Item sets";
 			this.niInTray.Click += new System.EventHandler(this.niInTray_Click);
+			this.niInTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.niInTray_MouseDoubleClick);
+			// 
+			// cmInTray
+			// 
+			this.cmInTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiShow,
+            this.tsiQuit});
+			this.cmInTray.Name = "cmInTray";
+			this.cmInTray.Size = new System.Drawing.Size(104, 48);
+			// 
+			// tsiShow
+			// 
+			this.tsiShow.Name = "tsiShow";
+			this.tsiShow.Size = new System.Drawing.Size(103, 22);
+			this.tsiShow.Text = "Show";
+			this.tsiShow.Click += new System.EventHandler(this.tsiShow_Click);
+			// 
+			// tsiQuit
+			// 
+			this.tsiQuit.Name = "tsiQuit";
+			this.tsiQuit.Size = new System.Drawing.Size(103, 22);
+			this.tsiQuit.Text = "Quit";
+			this.tsiQuit.Click += new System.EventHandler(this.tsiQuit_Click);
 			// 
 			// tmRefreshCooldown
 			// 
@@ -425,6 +453,7 @@
 			this.tlpNextRefresh.ResumeLayout(false);
 			this.tlpNextRefresh.PerformLayout();
 			this.tableLayoutPanel2.ResumeLayout(false);
+			this.cmInTray.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -457,6 +486,9 @@
 		private MetroFramework.Controls.MetroLink lkGitHub;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 		private MetroFramework.Controls.MetroButton btnChoosePath;
+		private MetroFramework.Controls.MetroContextMenu cmInTray;
+		private System.Windows.Forms.ToolStripMenuItem tsiShow;
+		private System.Windows.Forms.ToolStripMenuItem tsiQuit;
 	}
 }
 

@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Minimize_When_Closed" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Launch_On_Windows_Start" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Refresh_Time" Type="System.TimeSpan" Scope="User">
       <Value Profile="(Default)">01:00:00</Value>

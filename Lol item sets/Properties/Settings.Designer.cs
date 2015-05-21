@@ -25,7 +25,7 @@ namespace LoL_item_sets.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Minimize_When_Closed {
             get {
                 return ((bool)(this["Minimize_When_Closed"]));
@@ -37,7 +37,7 @@ namespace LoL_item_sets.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Launch_On_Windows_Start {
             get {
                 return ((bool)(this["Launch_On_Windows_Start"]));

@@ -3,7 +3,7 @@
 Download and automatically install the lastest LoL item sets from the website 'www.lol-item-sets-generator.org'.
 It will erase the previous item sets.
 
-Preview :
+Preview (showing version 0.1.0, it's the same as the actual one) :
 
 ![preview](https://cloud.githubusercontent.com/assets/6564012/7738219/505cee22-ff52-11e4-9774-daf17cfe0504.png)
 
@@ -13,7 +13,7 @@ Requires :
 
 How to use
 ---------
-- Downlaod the [lastest version here](https://github.com/Ilshidur/LoL-item-sets/releases/download/0.1.0/LoL-item-sets-0.1.0.rar)
+- Downlaod the [lastest version here](https://github.com/Ilshidur/LoL-item-sets/releases/download/0.1.1/LoL-item-sets-0.1.1.zip)
 - Run it as administrator
 
 Dependencies
@@ -24,6 +24,10 @@ Dependencies
 
 ChangeLog
 ---------
+
+0.1.1
+Added some checks for the Registery (option : "Launch on Windows startup").
+Bux fix : link "Go to the website" is now working.
 
 0.1.0
 First beta release.
