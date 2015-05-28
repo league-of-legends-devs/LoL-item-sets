@@ -35,6 +35,4 @@ First beta release.
 TODO
 ---------
 
-- Fix bug on the "Go to the website" link
-- If "Minimize on close" is checked, add an option to close the app anyway
-- Get some feedback :)
+- The application crashes at every launch for some people. We need to identify the issue.
