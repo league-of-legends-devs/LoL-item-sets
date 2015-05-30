@@ -13,7 +13,7 @@ Requires :
 
 How to use
 ---------
-- Downlaod the [lastest version here](https://github.com/Ilshidur/LoL-item-sets/releases/download/0.1.1/LoL-item-sets-0.1.1.zip)
+- Downlaod the [lastest version here](http://www.item-sets-generator.org/clicks/click.php?id=dl_application_from_other_site)
 - Run it as administrator
 
 Dependencies
