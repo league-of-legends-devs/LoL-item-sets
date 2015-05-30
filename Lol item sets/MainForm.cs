@@ -20,9 +20,11 @@ namespace Lol_item_sets
 		private string saveFolder = "Champions";
 
 		private bool loadingRefreshTime = false;
-		private TimeSpan refreshCooldown;
+		private TimeSpan refreshCooldown = new TimeSpan(1, 0, 0);
 
 		private bool downloading = false;
+
+		private const int MIN_SECONDS = 60;
 
 		#region Constructor
 
@@ -80,13 +82,15 @@ namespace Lol_item_sets
 
 		private void updateCooldown(bool reset)
 		{
+			// TODO : Fix visual bug when launching => if "Auto update" is unchecked and we check it, the timer does "1:00:00" and then "0:00:59".
 			TimeSpan tempCooldown = new TimeSpan((int)this.nudRefreshHours.Value, (int)this.nudRefreshMinutes.Value, (int)this.nudRefreshSeconds.Value);
 			this.lblNextRefreshCooldown.Text = refreshCooldown.ToString();
 			if (this.cbAutoUpdate.Checked)
 			{
-				if (tempCooldown.TotalSeconds <= 60) // Minimum 60 seconds
+				if (tempCooldown.TotalSeconds <= MIN_SECONDS) // Minimum 60 seconds
 				{
-					tempCooldown = tempCooldown.Add(new TimeSpan(0, 0, 60));
+					tempCooldown = tempCooldown.Add(new TimeSpan(0, 0, MIN_SECONDS));
+					this.nudRefreshMinutes.Value = MIN_SECONDS;
 				}
 				if (this.tmRefreshCooldown.Enabled == false)
 				{
@@ -267,7 +271,8 @@ namespace Lol_item_sets
 			}
 			catch (Exception e)
 			{
-				MetroFramework.MetroMessageBox.Show(this, "Error when downloading the file. Be sure to run the application as administrator.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MetroFramework.MetroMessageBox.Show(this, "Error when downloading the file to " + savePath + ". Be sure to run the application as administrator or reconfigure the item sets path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
 			}
 
 			// Delete all the directories => delete the previous item sets
@@ -309,6 +314,9 @@ namespace Lol_item_sets
 			this.Refresh();
 			System.IO.File.Delete(savePath);
 
+			//this.lblDownloading.Text = "Done ! :)";
+			//this.Refresh();
+			//System.Threading.Thread.Sleep(2000);
 			this.lblDownloading.Visible = false;
 			this.Refresh();
 

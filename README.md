@@ -25,6 +25,9 @@ Dependencies
 ChangeLog
 ---------
 
+0.1.2
+Bug fix : trying to fix the crash when launching the application. Waiting for feedback.
+
 0.1.1
 Added some checks for the Registery (option : "Launch on Windows startup").
 Bux fix : link "Go to the website" is now working.
