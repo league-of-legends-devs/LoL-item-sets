@@ -286,9 +286,10 @@ namespace Lol_item_sets
 			// Unzipping the .zip archive
 			this.lblDownloading.Text = "Unzipping sets ...";
 			this.Refresh();
-			Shell32.Shell objShell = new Shell32.Shell();
-			Shell32.Folder destinationFolder = objShell.NameSpace(LoL_item_sets.Properties.Settings.Default.Save_Folder);
-			Shell32.Folder sourceFile = objShell.NameSpace(savePath);
+
+
+			Shell32.Folder destinationFolder = GetShell32NameSpaceFolder(LoL_item_sets.Properties.Settings.Default.Save_Folder);
+			Shell32.Folder sourceFile = GetShell32NameSpaceFolder(savePath);
 			if (sourceFile == null)
 			{
 				MetroFramework.MetroMessageBox.Show(this, "Error when downloading the file. The downloaded .zip archive could not be found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -300,7 +301,7 @@ namespace Lol_item_sets
 				System.IO.File.Delete(savePath);
 				return;
 			}
-			var items = objShell.NameSpace(sourceFile.Items().Item(0).Path).Items();
+            		var items = GetShell32NameSpaceFolder(sourceFile.Items().Item(0).Path).Items();
 			for (int i = 0; i < items.Count; i++)
 			{
 				var file = items.Item(i);
@@ -322,6 +323,16 @@ namespace Lol_item_sets
 
 			downloading = false;
 		}
+
+	        public Shell32.Folder GetShell32NameSpaceFolder(Object folder)
+	        {
+	            Type shellAppType = Type.GetTypeFromProgID("Shell.Application");
+	
+	            Object shell = Activator.CreateInstance(shellAppType);
+	            return (Shell32.Folder)shellAppType.InvokeMember("NameSpace",
+	            System.Reflection.BindingFlags.InvokeMethod, null, shell, new object[] { folder });
+	        }
+
 
 		#endregion
 	}
