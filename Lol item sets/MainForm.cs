@@ -287,21 +287,20 @@ namespace Lol_item_sets
 			this.lblDownloading.Text = "Unzipping sets ...";
 			this.Refresh();
 
-
 			Shell32.Folder destinationFolder = GetShell32NameSpaceFolder(LoL_item_sets.Properties.Settings.Default.Save_Folder);
 			Shell32.Folder sourceFile = GetShell32NameSpaceFolder(savePath);
 			if (sourceFile == null)
 			{
-				MetroFramework.MetroMessageBox.Show(this, "Error when downloading the file. The downloaded .zip archive could not be found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MetroFramework.MetroMessageBox.Show(this, "Error when unzipping the file. The downloaded .zip archive could not be found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 			if (sourceFile.Items().Item(0).Name != "ItemSets")
 			{
-				MetroFramework.MetroMessageBox.Show(this, "Error when downloading the file. The 'ItemSets' folder could not be found in the .zip archive.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MetroFramework.MetroMessageBox.Show(this, "Error when unzipping the file. The 'ItemSets' folder could not be found in the .zip archive.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				System.IO.File.Delete(savePath);
 				return;
 			}
-            		var items = GetShell32NameSpaceFolder(sourceFile.Items().Item(0).Path).Items();
+			var items = GetShell32NameSpaceFolder(sourceFile.Items().Item(0).Path).Items();
 			for (int i = 0; i < items.Count; i++)
 			{
 				var file = items.Item(i);
@@ -315,24 +314,19 @@ namespace Lol_item_sets
 			this.Refresh();
 			System.IO.File.Delete(savePath);
 
-			//this.lblDownloading.Text = "Done ! :)";
-			//this.Refresh();
-			//System.Threading.Thread.Sleep(2000);
 			this.lblDownloading.Visible = false;
 			this.Refresh();
 
 			downloading = false;
 		}
 
-	        public Shell32.Folder GetShell32NameSpaceFolder(Object folder)
-	        {
-	            Type shellAppType = Type.GetTypeFromProgID("Shell.Application");
-	
-	            Object shell = Activator.CreateInstance(shellAppType);
-	            return (Shell32.Folder)shellAppType.InvokeMember("NameSpace",
-	            System.Reflection.BindingFlags.InvokeMethod, null, shell, new object[] { folder });
-	        }
-
+		// Resolves compatibility issues through Windows versions.
+		public Shell32.Folder GetShell32NameSpaceFolder(Object folder)
+		{
+			Type shellAppType = Type.GetTypeFromProgID("Shell.Application");
+			Object shell = Activator.CreateInstance(shellAppType);
+			return (Shell32.Folder)shellAppType.InvokeMember("NameSpace", System.Reflection.BindingFlags.InvokeMethod, null, shell, new object[] { folder });
+		}
 
 		#endregion
 	}
