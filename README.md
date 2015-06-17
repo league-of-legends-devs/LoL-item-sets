@@ -29,7 +29,7 @@ ChangeLog
 Bug fix : fixed compatibility issues through Windows versions (crash when unzipping the downloaded sets file).
 Thanks to [corylulu](https://github.com/corylulu) for the help.
 
-.1.2
+0.1.2
 Bug fix : trying to fix the crash when launching the application. Waiting for feedback.
 
 0.1.1
