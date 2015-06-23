@@ -1,7 +1,8 @@
 # LoL-item-sets
 
-Download and automatically install the lastest LoL item sets from the website 'www.lol-item-sets-generator.org'.
-It will erase the previous item sets.
+Download and automatically install the lastest LoL item sets from the website :
+www.lol-item-sets-generator.org
+(it will erase the previous item sets)
 
 Preview (showing version 0.1.0, it's the same as the actual one) :
 
@@ -13,7 +14,7 @@ Requires :
 
 How to use
 ---------
-- Downlaod the [lastest version here](http://www.item-sets-generator.org/clicks/click.php?id=dl_application_from_other_site)
+- Download the [lastest version here](http://www.item-sets-generator.org/clicks/click.php?id=dl_application_from_other_site)
 - Run it as administrator
 
 Dependencies
@@ -30,7 +31,7 @@ Bug fix : fixed compatibility issues through Windows versions (crash when unzipp
 Thanks to [corylulu](https://github.com/corylulu) for the help.
 
 0.1.2
-Bug fix : trying to fix the crash when launching the application. Waiting for feedback.
+Bug fix : fixed the crash when launching the application.
 
 0.1.1
 Added some checks for the Registery (option : "Launch on Windows startup").
@@ -38,8 +39,3 @@ Bux fix : link "Go to the website" is now working.
 
 0.1.0
 First beta release.
-
-TODO
----------
-
-- The application crashes at every launch for some people. We need to identify the issue.
