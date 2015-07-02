@@ -39,3 +39,9 @@ Bux fix : link "Go to the website" is now working.
 
 0.1.0
 First beta release.
+
+TODO
+---------
+
+- Show the current patch version
+- Add some Twitter ads (NON INTRUSIVE)
