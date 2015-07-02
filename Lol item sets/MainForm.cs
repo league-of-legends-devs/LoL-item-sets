@@ -9,6 +9,7 @@ using System.Text;
 //using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Compression;
+using System.Net;
 
 namespace Lol_item_sets
 {
@@ -50,6 +51,13 @@ namespace Lol_item_sets
 				this.cbAutoLaunch.Checked = false;
 			}
 			this.cbMinimizeOnClose.Checked = LoL_item_sets.Properties.Settings.Default.Minimize_When_Closed;
+
+			using (WebClient client = new WebClient())
+			{
+				string currentPatchVersion = client.DownloadString("http://www.lol-item-sets-generator.org/?version");
+				this.lblCurrentPatchVersion.Text = String.Format("Current patch : {0}", currentPatchVersion);
+			}
+			
 			updateRefresh();
 		}
 

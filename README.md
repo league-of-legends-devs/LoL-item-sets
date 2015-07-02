@@ -4,9 +4,9 @@ Download and automatically install the lastest LoL item sets from the website :
 www.lol-item-sets-generator.org
 (it will erase the previous item sets)
 
-Preview (showing version 0.1.0, it's the same as the actual one) :
+Preview :
 
-![preview](https://cloud.githubusercontent.com/assets/6564012/7738219/505cee22-ff52-11e4-9774-daf17cfe0504.png)
+![preview](https://cloud.githubusercontent.com/assets/6564012/8487872/254108f2-210f-11e5-87ca-976c84baa74a.png)
 
 Requires :
 
@@ -43,5 +43,4 @@ First beta release.
 TODO
 ---------
 
-- Show the current patch version
 - Add some Twitter ads (NON INTRUSIVE)

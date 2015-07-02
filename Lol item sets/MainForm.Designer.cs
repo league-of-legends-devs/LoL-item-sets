@@ -59,6 +59,7 @@
 			this.tsiShow = new System.Windows.Forms.ToolStripMenuItem();
 			this.tsiQuit = new System.Windows.Forms.ToolStripMenuItem();
 			this.tmRefreshCooldown = new System.Windows.Forms.Timer(this.components);
+			this.lblCurrentPatchVersion = new MetroFramework.Controls.MetroLabel();
 			this.pnlMain.SuspendLayout();
 			this.tlpMain.SuspendLayout();
 			this.tlpWebsites.SuspendLayout();
@@ -75,7 +76,7 @@
 			// cbMinimizeOnClose
 			// 
 			this.cbMinimizeOnClose.AutoSize = true;
-			this.cbMinimizeOnClose.Location = new System.Drawing.Point(3, 33);
+			this.cbMinimizeOnClose.Location = new System.Drawing.Point(3, 43);
 			this.cbMinimizeOnClose.Name = "cbMinimizeOnClose";
 			this.cbMinimizeOnClose.Size = new System.Drawing.Size(119, 14);
 			this.cbMinimizeOnClose.TabIndex = 2;
@@ -102,6 +103,7 @@
 			// 
 			this.tlpMain.ColumnCount = 1;
 			this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tlpMain.Controls.Add(this.lblCurrentPatchVersion, 0, 0);
 			this.tlpMain.Controls.Add(this.tlpWebsites, 0, 8);
 			this.tlpMain.Controls.Add(this.cbAutoLaunch, 0, 1);
 			this.tlpMain.Controls.Add(this.cbMinimizeOnClose, 0, 2);
@@ -114,7 +116,7 @@
 			this.tlpMain.Location = new System.Drawing.Point(0, 0);
 			this.tlpMain.Name = "tlpMain";
 			this.tlpMain.RowCount = 10;
-			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
@@ -135,7 +137,7 @@
 			this.tlpWebsites.Controls.Add(this.lkGitHub, 1, 0);
 			this.tlpWebsites.Controls.Add(this.lkGoToWebsite, 0, 0);
 			this.tlpWebsites.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tlpWebsites.Location = new System.Drawing.Point(0, 170);
+			this.tlpWebsites.Location = new System.Drawing.Point(0, 180);
 			this.tlpWebsites.Margin = new System.Windows.Forms.Padding(0);
 			this.tlpWebsites.Name = "tlpWebsites";
 			this.tlpWebsites.RowCount = 1;
@@ -174,7 +176,7 @@
 			// cbAutoLaunch
 			// 
 			this.cbAutoLaunch.AutoSize = true;
-			this.cbAutoLaunch.Location = new System.Drawing.Point(3, 13);
+			this.cbAutoLaunch.Location = new System.Drawing.Point(3, 23);
 			this.cbAutoLaunch.Name = "cbAutoLaunch";
 			this.cbAutoLaunch.Size = new System.Drawing.Size(157, 14);
 			this.cbAutoLaunch.TabIndex = 1;
@@ -185,7 +187,7 @@
 			// cbAutoUpdate
 			// 
 			this.cbAutoUpdate.AutoSize = true;
-			this.cbAutoUpdate.Location = new System.Drawing.Point(3, 58);
+			this.cbAutoUpdate.Location = new System.Drawing.Point(3, 68);
 			this.cbAutoUpdate.Name = "cbAutoUpdate";
 			this.cbAutoUpdate.Size = new System.Drawing.Size(144, 14);
 			this.cbAutoUpdate.TabIndex = 3;
@@ -209,7 +211,7 @@
 			this.tableLayoutPanel1.Controls.Add(this.nudRefreshSeconds, 4, 0);
 			this.tableLayoutPanel1.Controls.Add(this.lblRefreshHours, 1, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 75);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 85);
 			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
@@ -282,19 +284,19 @@
 			this.tlpAbout.Controls.Add(this.lblAbout, 1, 0);
 			this.tlpAbout.Controls.Add(this.lblDownloading, 0, 0);
 			this.tlpAbout.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tlpAbout.Location = new System.Drawing.Point(0, 190);
+			this.tlpAbout.Location = new System.Drawing.Point(0, 200);
 			this.tlpAbout.Margin = new System.Windows.Forms.Padding(0);
 			this.tlpAbout.Name = "tlpAbout";
 			this.tlpAbout.RowCount = 1;
 			this.tlpAbout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tlpAbout.Size = new System.Drawing.Size(260, 30);
+			this.tlpAbout.Size = new System.Drawing.Size(260, 20);
 			this.tlpAbout.TabIndex = 11;
 			// 
 			// lblAbout
 			// 
 			this.lblAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblAbout.AutoSize = true;
-			this.lblAbout.Location = new System.Drawing.Point(189, 11);
+			this.lblAbout.Location = new System.Drawing.Point(189, 1);
 			this.lblAbout.Name = "lblAbout";
 			this.lblAbout.Size = new System.Drawing.Size(68, 19);
 			this.lblAbout.TabIndex = 0;
@@ -304,7 +306,7 @@
 			// 
 			this.lblDownloading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblDownloading.AutoSize = true;
-			this.lblDownloading.Location = new System.Drawing.Point(3, 11);
+			this.lblDownloading.Location = new System.Drawing.Point(3, 1);
 			this.lblDownloading.Name = "lblDownloading";
 			this.lblDownloading.Size = new System.Drawing.Size(54, 19);
 			this.lblDownloading.Style = MetroFramework.MetroColorStyle.Red;
@@ -321,7 +323,7 @@
 			this.tlpNextRefresh.Controls.Add(this.lblNextRefresh, 0, 0);
 			this.tlpNextRefresh.Controls.Add(this.lblNextRefreshCooldown, 1, 0);
 			this.tlpNextRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tlpNextRefresh.Location = new System.Drawing.Point(0, 110);
+			this.tlpNextRefresh.Location = new System.Drawing.Point(0, 120);
 			this.tlpNextRefresh.Margin = new System.Windows.Forms.Padding(0);
 			this.tlpNextRefresh.Name = "tlpNextRefresh";
 			this.tlpNextRefresh.RowCount = 1;
@@ -355,7 +357,7 @@
 			this.tableLayoutPanel2.Controls.Add(this.btnDownload, 0, 0);
 			this.tableLayoutPanel2.Controls.Add(this.btnChoosePath, 1, 0);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 130);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 140);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 1;
@@ -425,6 +427,16 @@
 			this.tmRefreshCooldown.Interval = 1000;
 			this.tmRefreshCooldown.Tick += new System.EventHandler(this.tmRefreshCooldown_Tick);
 			// 
+			// lblCurrentPatchVersion
+			// 
+			this.lblCurrentPatchVersion.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.lblCurrentPatchVersion.AutoSize = true;
+			this.lblCurrentPatchVersion.Location = new System.Drawing.Point(81, 0);
+			this.lblCurrentPatchVersion.Name = "lblCurrentPatchVersion";
+			this.lblCurrentPatchVersion.Size = new System.Drawing.Size(98, 19);
+			this.lblCurrentPatchVersion.TabIndex = 2;
+			this.lblCurrentPatchVersion.Text = "Unknown patch";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,6 +501,7 @@
 		private MetroFramework.Controls.MetroContextMenu cmInTray;
 		private System.Windows.Forms.ToolStripMenuItem tsiShow;
 		private System.Windows.Forms.ToolStripMenuItem tsiQuit;
+		private MetroFramework.Controls.MetroLabel lblCurrentPatchVersion;
 	}
 }
 
