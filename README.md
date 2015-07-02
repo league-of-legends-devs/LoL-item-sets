@@ -26,6 +26,9 @@ Dependencies
 ChangeLog
 ---------
 
+0.1.4
+New feature : Shows the current LoL patch version.
+
 0.1.3
 Bug fix : fixed compatibility issues through Windows versions (crash when unzipping the downloaded sets file).
 Thanks to [corylulu](https://github.com/corylulu) for the help.
