@@ -46,4 +46,10 @@ First beta release.
 TODO
 ---------
 
+- Make a Mac application (working on it ...)
 - Add some Twitter ads (NON INTRUSIVE)
+
+CONTACT ME
+---------
+
+Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-sets-generator.org) or [ilshidur@gmail.com](mailto:ilshidur@gmail.com).
