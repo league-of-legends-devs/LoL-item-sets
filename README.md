@@ -48,6 +48,7 @@ TODO
 
 - Make a Mac application (working on it ...)
 - Add some Twitter ads (NON INTRUSIVE)
+- Add a pop-up warning the user when a new patch came out
 
 CONTACT ME
 ---------
