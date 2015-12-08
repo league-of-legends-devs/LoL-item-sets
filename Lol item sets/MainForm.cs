@@ -65,6 +65,9 @@ namespace Lol_item_sets
 
 		#region Update
 
+        /// <summary>
+        /// Updates the initial refresh values of the timer by importing the values from the settings.
+        /// </summary>
 		private void updateRefresh()
 		{
 			loadingRefreshTime = true;
@@ -76,18 +79,25 @@ namespace Lol_item_sets
 			updateRefreshTime();
 		}
 
+        /// <summary>
+        /// Updates the refresh time 'Enabled' state.
+        /// </summary>
 		private void updateRefreshTime()
 		{
-			this.lblRefreshHours  .Enabled		= this.cbAutoUpdate.Checked;
+			this.lblRefreshHours.Enabled		= this.cbAutoUpdate.Checked;
 			this.lblRefreshMinutes.Enabled		= this.cbAutoUpdate.Checked;
 			this.lblRefreshSeconds.Enabled		= this.cbAutoUpdate.Checked;
-			this.nudRefreshHours  .Enabled		= this.cbAutoUpdate.Checked;
+			this.nudRefreshHours.Enabled		= this.cbAutoUpdate.Checked;
 			this.nudRefreshMinutes.Enabled		= this.cbAutoUpdate.Checked;
 			this.nudRefreshSeconds.Enabled		= this.cbAutoUpdate.Checked;
 			this.lblNextRefresh.Enabled			= this.cbAutoUpdate.Checked;
 			this.lblNextRefreshCooldown.Enabled = this.cbAutoUpdate.Checked;
 		}
 
+        /// <summary>
+        /// Updates the shown cooldown.
+        /// </summary>
+        /// <param name="reset">Set to 'true' to reset the cooldown to its usual time.</param>
 		private void updateCooldown(bool reset)
 		{
 			// TODO : Fix visual bug when launching => if "Auto update" is unchecked and we check it, the timer does "1:00:00" and then "0:00:59".
@@ -258,6 +268,7 @@ namespace Lol_item_sets
 
 		private void downloadAndInstallSets()
 		{
+            // Preventing infinite loop.
 			if (downloading)
 				return;
 			downloading = true;
