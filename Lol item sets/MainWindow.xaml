@@ -7,7 +7,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="LoL_item_sets_XAML.MainWindow"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="LoL item sets" Height="300" Width="300" Background="{x:Null}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderThickness="0" Foreground="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Icon="Resources/icon.png">
+        Title="LoL item sets" Height="300" Width="300" Background="{x:Null}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderThickness="0" Foreground="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Icon="Resources/icon.png" Closing="MainForm_Closing">
     <Window.Resources>
         <Image x:Key="folder" Source="Resources/folder.png"/>
         <Image x:Key="icon" Source="Resources/icon.png"/>
@@ -27,9 +27,9 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <CheckBox x:Name="cbAutoLaunch" Content="Launch on Windows start" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Checked="cbAutoLaunch_Checked" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbMinimizeOnClose" Content="Minimize on close" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Checked="cbMinimizeOnClose_Checked" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2"/>
-        <CheckBox x:Name="cbAutoUpdate" Content="Auto update (min. 60s)" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Checked="cbAutoUpdate_Checked" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="cbAutoLaunch" Content="Launch on Windows start" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Checked="cbAutoLaunch_Checked" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2" Unchecked="cbAutoLaunch_Checked"/>
+        <CheckBox x:Name="cbMinimizeOnClose" Content="Minimize on close" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Checked="cbMinimizeOnClose_Checked" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2" Unchecked="cbMinimizeOnClose_Checked"/>
+        <CheckBox x:Name="cbAutoUpdate" Content="Auto update (min. 60s)" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Checked="cbAutoUpdate_Checked" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2" Unchecked="cbAutoUpdate_Checked"/>
         <Label x:Name="lblNextRefresh" Content="Next auto download in :" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.654,2.853" FontFamily="/LoL item sets;component/#Lato" Grid.ColumnSpan="2"/>
         <Label x:Name="lblNextRefreshCooldown" Content="00:00:00" HorizontalAlignment="Left" Margin="75.649,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.654,2.853" FontFamily="/LoL item sets;component/#Lato" Grid.Column="1"/>
         <Button x:Name="btnDownload" Content="Install the sets" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Height="29" FontSize="14.667" Click="btnDownload_Click" FontFamily="/LoL item sets;component/#Lato" FontWeight="Bold" Width="216" Grid.ColumnSpan="2"/>
@@ -41,4 +41,9 @@
         <Label x:Name="lblAuthor" Content="by Ilshidur" Margin="0,232,9.6,0" VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="/LoL item sets;component/#Lato" FontWeight="Bold" FontSize="16" Grid.Column="1"/>
         <TextBlock x:Name="lkGoToChangelog" Margin="10,236,0,10" HorizontalAlignment="Left" FontFamily="/LoL item sets;component/#Lato" FontWeight="Bold" TextDecorations="{x:Null}" FontSize="13.333" Width="134" TextAlignment="Center" Foreground="#FFE66D09" Grid.ColumnSpan="2"><Hyperlink Click="lkGoToChangelog_Click">Changelog</Hyperlink></TextBlock>
     </Grid>
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="btnUpdate" Content="update" Click="btnUpdate_Click"/>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
 </Controls:MetroWindow>

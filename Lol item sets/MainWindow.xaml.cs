@@ -20,15 +20,13 @@ using System.Windows.Forms;
 using System.Diagnostics;
 
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 // TODO: Add ClickOnce support
 
 namespace LoL_item_sets_XAML
 {
-	/// <summary>
-	/// Logique d'interaction pour MainWindow.xaml
-	/// </summary>
-	public partial class MainWindow
+	public partial class MainWindow : MetroWindow
 	{
 		// The path to the key where Windows looks for startup applications
 		private RegistryKey rkApp;
@@ -39,12 +37,14 @@ namespace LoL_item_sets_XAML
 		private bool updatingCooldown = false;
         private TimeSpan refreshCooldown = new TimeSpan(1, 0, 0);
 
-		private bool downloading = false;
-
 		private const int MIN_SECONDS = 60;
 
 		private DispatcherTimer tmRefreshCooldown;
 		private NotifyIcon niInTray;
+
+		private bool isInit = false;
+		private bool manualClosing = true;
+		private bool downloading = false;
 
 		#region Constructor
 
@@ -52,16 +52,33 @@ namespace LoL_item_sets_XAML
 		{
 			InitializeComponent();
 			init();
+			isInit = true;
 			updateCooldown(true);
 		}
 
-		private void init()
+		private async void init()
 		{
 			Trace.Listeners.Add(new TextWriterTraceListener("errors.log"));
+
 			tmRefreshCooldown = new DispatcherTimer();
+			tmRefreshCooldown.Tick += new EventHandler(tmRefreshCooldown_Tick);
+			tmRefreshCooldown.Interval = new TimeSpan(0, 0, 1);
+
 			niInTray = new NotifyIcon();
-			niInTray.MouseDoubleClick += NiInTray_MouseDoubleClick;
-            LoL_item_sets.Properties.Settings.Default.Reload();
+			niInTray.Icon = new System.Drawing.Icon(LoL_item_sets.Properties.Resources.iconIco, new System.Drawing.Size(32, 32));
+			niInTray.BalloonTipText = "I am minimized in your tray ;-)";
+			niInTray.Text = "LoL item sets generator";
+			niInTray.BalloonTipIcon = ToolTipIcon.Info;
+			niInTray.ContextMenu = new System.Windows.Forms.ContextMenu();
+			var tsiShow = new System.Windows.Forms.MenuItem("Show");
+			tsiShow.Click += tsiShow_Click;
+            niInTray.ContextMenu.MenuItems.Add(tsiShow);
+			var tsiQuit = new System.Windows.Forms.MenuItem("Quit");
+			tsiQuit.Click += tsiQuit_Click;
+            niInTray.ContextMenu.MenuItems.Add(tsiQuit);
+
+			LoL_item_sets.Properties.Settings.Default.Reload();
+
 			this.Title = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 			try
 			{
@@ -71,7 +88,7 @@ namespace LoL_item_sets_XAML
 			catch (Exception e)
 			{
 				Trace.TraceError(e.Message);
-				System.Windows.MessageBox.Show("Error when loading the key in the registry. Be sure to run the application as administrator.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "Error when loading the key in the registry. Be sure to run the application as administrator.");
 				this.cbAutoLaunch.IsChecked = false;
 			}
 			this.cbMinimizeOnClose.IsChecked = LoL_item_sets.Properties.Settings.Default.Minimize_When_Closed;
@@ -87,27 +104,27 @@ namespace LoL_item_sets_XAML
 			catch (WebException e)
 			{
 				Trace.TraceError(e.Message);
-				System.Windows.MessageBox.Show("The website appears to be down.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "The website appears to be down.");
 				return;
 			}
 			catch (Exception e)
 			{
 				Trace.TraceError(e.Message);
-				System.Windows.MessageBox.Show("Unknown error : " + e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "Unknown error : " + e.Message);
 				return;
 			}
 
             updateRefresh();
 		}
 
-		private void NiInTray_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-
 		#endregion
 
 		#region Events
+
+		private async void btnUpdate_Click(object sender, RoutedEventArgs e)
+		{
+			await this.ShowMessageAsync("Nawp", "The update module is not implemented yet but it will be soon !");
+		}
 
 		private void cbAutoLaunch_Checked(object sender, RoutedEventArgs e)
 		{
@@ -140,7 +157,7 @@ namespace LoL_item_sets_XAML
 
 		private void cooldown_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
 		{
-			if (!updatingCooldown)
+			if (!updatingCooldown && isInit)
 			{
 				saveRefreshTime();
 				updateCooldown(true);
@@ -152,7 +169,7 @@ namespace LoL_item_sets_XAML
 			downloadAndInstallSets();
 		}
 
-		private void btnChoosePath_Click(object sender, RoutedEventArgs e)
+		private async void btnChoosePath_Click(object sender, RoutedEventArgs e)
 		{
 			var fbdSavePath = new FolderBrowserDialog();
 			fbdSavePath.ShowNewFolderButton = false;
@@ -162,7 +179,7 @@ namespace LoL_item_sets_XAML
 				if (!fbdSavePath.SelectedPath.EndsWith(@"\" + saveFolder))
 				{
 					Trace.TraceError("Invalid : " + saveFolder);
-					System.Windows.MessageBox.Show(this, "This path seems to be invalid. The folder must be named '" + saveFolder + "'.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+					await this.ShowMessageAsync("Error", "This path seems to be invalid. The folder must be named '" + saveFolder + "'.");
 					return;
 				}
 				LoL_item_sets.Properties.Settings.Default.Save_Folder = fbdSavePath.SelectedPath;
@@ -191,16 +208,6 @@ namespace LoL_item_sets_XAML
 			updateCooldown(false);
 		}
 
-		private void niInTray_Click(object sender, EventArgs e)
-		{
-			// Do nothing
-		}
-
-		private void niInTray_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
-		{
-
-		}
-
 		private void tsiShow_Click(object sender, EventArgs e)
 		{
 			this.Show();
@@ -208,12 +215,13 @@ namespace LoL_item_sets_XAML
 
 		private void tsiQuit_Click(object sender, EventArgs e)
 		{
+			this.manualClosing = false;
 			System.Windows.Application.Current.Shutdown();
 		}
 
-		private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+		private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			if (e.CloseReason == CloseReason.UserClosing && this.cbMinimizeOnClose.IsChecked == true)
+			if (this.manualClosing && this.cbMinimizeOnClose.IsChecked == true)
 			{
 				niInTray.Visible = true;
 				niInTray.ShowBalloonTip(500);
@@ -253,14 +261,15 @@ namespace LoL_item_sets_XAML
 		/// <param name="reset">Set to 'true' to reset the cooldown to its usual time.</param>
 		private void updateCooldown(bool reset)
 		{
-			// TODO : Fix visual bug when launching => if "Auto update" is unchecked and we check it, the timer does "1:00:00" and then "0:00:59".
 			this.lblNextRefreshCooldown.Content = refreshCooldown.ToString();
 			if (this.cbAutoUpdate.IsChecked == true)
 			{
-				if (this.cooldown.Value?.TotalSeconds <= MIN_SECONDS) // Minimum 60 seconds
+				// Minimum 60 seconds
+				if (this.cooldown.Value?.TotalSeconds < MIN_SECONDS)
 				{
 					updatingCooldown = true;
-                    this.cooldown.Value = this.cooldown.Value.GetValueOrDefault().Add(new TimeSpan(0, 0, MIN_SECONDS));
+					this.cooldown.Value = new TimeSpan(0, 0, MIN_SECONDS);
+					saveRefreshTime();
 					updatingCooldown = false;
 				}
 				if (this.tmRefreshCooldown.IsEnabled == false)
@@ -301,8 +310,11 @@ namespace LoL_item_sets_XAML
 			LoL_item_sets.Properties.Settings.Default.Save();
 		}
 
-		private void downloadAndInstallSets()
+		private async void downloadAndInstallSets()
 		{
+			// TODO: Show progression using a "Progress Dialog" control and :
+			// https://github.com/100GPing100/LoadingIndicators.WPF
+
 			// Preventing infinite loop.
 			if (downloading)
 				return;
@@ -325,7 +337,7 @@ namespace LoL_item_sets_XAML
 			catch (WebException e)
 			{
 				Trace.TraceError(e.Message);
-				System.Windows.MessageBox.Show("Error when downloading the file to " + savePath + ". Either the website appears to be down or your sets location is incorrect.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "Error when downloading the file to " + savePath + ". Either the website appears to be down or your sets location is incorrect.");
 				this.lblDownloading.Visibility = Visibility.Hidden;
 				downloading = false;
 				return;
@@ -333,7 +345,7 @@ namespace LoL_item_sets_XAML
             catch (Exception e)
 			{
 				Trace.TraceError(e.Message);
-				System.Windows.MessageBox.Show("Error when downloading the file to " + savePath + ". Be sure to run the application as administrator or reconfigure the item sets path.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "Error when downloading the file to " + savePath + ". Be sure to run the application as administrator or reconfigure the item sets path.");
 				this.lblDownloading.Visibility = Visibility.Hidden;
 				downloading = false;
                 return;
@@ -354,7 +366,7 @@ namespace LoL_item_sets_XAML
 			if (sourceFile == null)
 			{
 				Trace.TraceError("The downloaded .zip archive could not be found.");
-				System.Windows.MessageBox.Show("Error when unzipping the file. The downloaded .zip archive could not be found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "Error when unzipping the file. The downloaded .zip archive could not be found.");
 				this.lblDownloading.Visibility = Visibility.Hidden;
 				downloading = false;
 				return;
@@ -362,7 +374,7 @@ namespace LoL_item_sets_XAML
             if (sourceFile.Items().Item(0)?.Name != "ItemSets")
 			{
 				Trace.TraceError("The 'ItemSets' folder could not be found in the .zip archive.");
-				System.Windows.MessageBox.Show("Error when unzipping the file. The 'ItemSets' folder could not be found in the .zip archive.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+				await this.ShowMessageAsync("Error", "Error when unzipping the file. The 'ItemSets' folder could not be found in the .zip archive.");
 				System.IO.File.Delete(savePath);
 				this.lblDownloading.Visibility = Visibility.Hidden;
 				downloading = false;
