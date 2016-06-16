@@ -21,6 +21,7 @@ Dependencies
 ---------
 
 - Windows Shell32
+- [MahApps.Metro](http://mahapps.com/)
 
 ChangeLog : [here](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md)
 ---------
