@@ -29,12 +29,12 @@ ChangeLog : [here](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGEL
 TODO
 ---------
 
-1) Notify the user when a new version is available (and use ClickOnce)
-2) Better error messages
-3) Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
-4) Make a Mac application (working on it ...)
-5) Add some Twitter ads (NON INTRUSIVE)
-6) Add a pop-up warning the user when a new patch came out
+* Notify the user when a new version is available (and use ClickOnce)
+* Better error messages
+* Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
+* Make a Mac application (working on it ...)
+* Add some Twitter ads (NON INTRUSIVE)
+* Add a pop-up warning the user when a new patch came out
 
 CONTACT ME
 ---------
