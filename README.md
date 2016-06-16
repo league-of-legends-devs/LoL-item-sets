@@ -6,7 +6,7 @@ www.lol-item-sets-generator.org
 
 Preview :
 
-![preview](https://cloud.githubusercontent.com/assets/6564012/8487872/254108f2-210f-11e5-87ca-976c84baa74a.png)
+![preview](preview.png)
 
 Requires :
 
