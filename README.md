@@ -10,7 +10,7 @@ Preview :
 
 Requires :
 
-- The [.NET Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=17851) or higher
+- The [.NET Framework 4.5](https://www.microsoft.com/en-US/download/details.aspx?id=30653) or higher
 
 How to use
 ---------
