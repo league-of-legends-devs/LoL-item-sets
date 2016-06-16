@@ -10,7 +10,7 @@ Preview :
 
 Requires :
 
-- The [.NET Framework 3.5](https://www.microsoft.com/en-us/download/details.aspx?id=21) or higher
+- The [.NET Framework 4.5](https://www.microsoft.com/en-US/download/details.aspx?id=30653) or higher
 
 How to use
 ---------
@@ -20,35 +20,20 @@ How to use
 Dependencies
 ---------
 
-- The [Metro Framework](https://github.com/viperneo/winforms-modernui) by [Sven Walter](https://github.com/viperneo)
 - Windows Shell32
 
-ChangeLog
+ChangeLog : [here](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md)
 ---------
-
-0.1.4
-New feature : Shows the current LoL patch version.
-
-0.1.3
-Bug fix : fixed compatibility issues through Windows versions (crash when unzipping the downloaded sets file).
-Thanks to [corylulu](https://github.com/corylulu) for the help ([#1](https://github.com/Ilshidur/LoL-item-sets/issues/1#issue-88575929)).
-
-0.1.2
-Bug fix : fixed the crash when launching the application.
-
-0.1.1
-Added some checks for the Registery (option : "Launch on Windows startup").
-Bux fix : link "Go to the website" is now working.
-
-0.1.0
-First beta release.
 
 TODO
 ---------
 
-- Make a Mac application (working on it ...)
-- Add some Twitter ads (NON INTRUSIVE)
-- Add a pop-up warning the user when a new patch came out
+1) Notify the user when a new version is available (and use ClickOnce)
+2) Better error messages
+3) Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
+4) Make a Mac application (working on it ...)
+5) Add some Twitter ads (NON INTRUSIVE)
+6) Add a pop-up warning the user when a new patch came out
 
 CONTACT ME
 ---------
