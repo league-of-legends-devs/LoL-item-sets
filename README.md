@@ -35,6 +35,13 @@ TODO
 * Add some Twitter ads (NON INTRUSIVE)
 * Add a pop-up warning the user when a new patch came out
 
+BACKERS
+---------
+
+* Jérôme P.
+
+Thank you for donating !
+
 CONTACT ME
 ---------
 
