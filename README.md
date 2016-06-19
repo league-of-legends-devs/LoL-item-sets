@@ -14,7 +14,7 @@ Requires :
 
 How to use
 ---------
-- Download the [lastest version here](http://www.item-sets-generator.org/clicks/click.php?id=dl_application_from_other_site)
+- Download the [lastest version here](https://lol-item-sets-generator.org/clicks/click.php?id=dl_application_from_other_site)
 - Run it as administrator
 
 Dependencies
