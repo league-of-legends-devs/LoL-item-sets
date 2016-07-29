@@ -1,4 +1,6 @@
-# LoL-item-sets [![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases)
+# LoL-item-sets
+
+[![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases) [![Slack Status](https://slack.lol-item-sets-generator.org/badge.svg)](https://slack.lol-item-sets-generator.org/)
 
 Download and automatically install the lastest LoL item sets from the website : lol-item-sets-generator.org (it will erase the previous item sets)
 
@@ -32,7 +34,6 @@ TODO
 * Notify the user when a new version is available (and use ClickOnce)
 * Better error messages
 * Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
-* Make a Mac application (working on it ...)
 * Add some Twitter ads (NON INTRUSIVE)
 * Add a pop-up warning the user when a new patch came out
 
@@ -42,8 +43,3 @@ BACKERS
 * Jérôme P.
 
 Thank you for donating !
-
-CONTACT ME
----------
-
-Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-sets-generator.org) or [ilshidur@gmail.com](mailto:ilshidur@gmail.com).
