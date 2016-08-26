@@ -21,6 +21,7 @@ using System.Diagnostics;
 
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
+using LoL_item_sets.models;
 
 // TODO: Add ClickOnce support
 
@@ -97,8 +98,16 @@ namespace LoL_item_sets_XAML
 			{
 				using (WebClient client = new WebClient())
 				{
-					string currentPatchVersion = client.DownloadString("http://www.lol-item-sets-generator.org/?version");
-					this.lblCurrentPatchVersion.Content = String.Format("Current patch : {0}", currentPatchVersion);
+					string response = client.DownloadString("https://lol-item-sets-generator.org/api/patch");
+					CurrentPatch patch = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<CurrentPatch>(response);
+					if (patch.err == null)
+					{
+						this.lblCurrentPatchVersion.Content = String.Format("Current patch : {0}", patch.version);
+					}
+					else
+					{
+						this.lblCurrentPatchVersion.Content = String.Format("Patch not found : {0}", patch.err);
+					}
 				}
 			}
 			catch (WebException e)
@@ -114,7 +123,36 @@ namespace LoL_item_sets_XAML
 				return;
 			}
 
-            updateRefresh();
+			try
+			{
+				using (WebClient client = new WebClient())
+				{
+					string response = client.DownloadString("https://lol-item-sets-generator.org/api/news");
+					News news = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<News>(response);
+					if (news.text != "")
+					{
+						this.lblNews.Text = news.text;
+					}
+					else
+					{
+						this.lblNews.Text = "Follow us on Twitter for more updates !";
+					}
+				}
+			}
+			catch (WebException e)
+			{
+				Trace.TraceError(e.Message);
+				await this.ShowMessageAsync("Error", "The website appears to be down.");
+				return;
+			}
+			catch (Exception e)
+			{
+				Trace.TraceError(e.Message);
+				await this.ShowMessageAsync("Error", "Unknown error : " + e.Message);
+				return;
+			}
+
+			updateRefresh();
 		}
 
 		#endregion
@@ -330,8 +368,7 @@ namespace LoL_item_sets_XAML
 			{
 				using (var client = new WebClient())
 				{
-					client.DownloadFile("http://www.lol-item-sets-generator.org/clicks/click.php?id=dl_sets_from_application", savePath);
-					// This link is a redirection. It helps to count the downloads.
+					client.DownloadFile("https://lol-item-sets-generator.org/downloads/sets-from-app", savePath);
 				}
 			}
 			catch (WebException e)
@@ -392,7 +429,7 @@ namespace LoL_item_sets_XAML
 			this.lblDownloading.Content = "Deleting archive ...";
 			System.IO.File.Delete(savePath);
 
-			this.lblDownloading.Visibility = Visibility.Hidden;
+			this.lblDownloading.Content = "Done !";
 
 			downloading = false;
 		}

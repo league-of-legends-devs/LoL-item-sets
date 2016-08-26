@@ -34,7 +34,6 @@ TODO
 * Notify the user when a new version is available (and use ClickOnce)
 * Better error messages
 * Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
-* Add some Twitter ads (NON INTRUSIVE)
 * Add a pop-up warning the user when a new patch came out
 
 BACKERS

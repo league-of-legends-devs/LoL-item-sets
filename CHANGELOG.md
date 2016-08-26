@@ -1,5 +1,10 @@
 # CHANGELOG
 
+0.3.0 (BREAKING RELEASE)
+* Fix : broken API and download links
+* "News" section (Twitter)
+* Show "Done !" when download is done
+
 0.2.0
 * Migrated to WPF design ([Metro Framework](https://github.com/viperneo/winforms-modernui) by [Sven Walter](https://github.com/viperneo) no longer maintained).
 * Errors printed in a log file.
