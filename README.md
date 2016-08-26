@@ -35,10 +35,3 @@ TODO
 * Better error messages
 * Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
 * Add a pop-up warning the user when a new patch came out
-
-BACKERS
----------
-
-* Jérôme P.
-
-Thank you for donating !
