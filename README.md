@@ -6,30 +6,28 @@ Download and automatically install the lastest LoL item sets from the website : 
 
 Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
 
-Preview :
-
 ![preview](preview.png)
 
-Requires :
+## Reporting a bug
 
-- The [.NET Framework 4.5](https://www.microsoft.com/en-US/download/details.aspx?id=30653) or higher
+* Bug on the **application** : [submit here](https://github.com/Ilshidur/LoL-item-sets/issues/new)
+* Bug on the **item sets** : [submit here](https://github.com/Ilshidur/lol-item-sets-builder/issues/new)
 
-How to use
----------
+## How to use
 - Download the [lastest version here](https://lol-item-sets-generator.org/downloads/sets-from-website)
 - Run it as administrator
 
-Dependencies
----------
+## Requirements
+- The [.NET Framework 4.5](https://www.microsoft.com/en-US/download/details.aspx?id=30653) or higher
+
+## Dependencies
 
 - Windows Shell32
 - [MahApps.Metro](http://mahapps.com/)
 
-ChangeLog : [here](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md)
----------
+## ChangeLog : [here](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md)
 
-TODO
----------
+## TODO
 
 * Notify the user when a new version is available (and use ClickOnce)
 * Better error messages
