@@ -33,3 +33,7 @@ Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
 * Better error messages
 * Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
 * Add a pop-up warning the user when a new patch came out
+
+## Contact
+
+Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-sets-generator.org) or [ilshidur@gmail.com](mailto:ilshidur@gmail.com).
