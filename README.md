@@ -11,7 +11,7 @@ Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
 ## Reporting a bug
 
 * Bug on the **application** : [submit here](https://github.com/Ilshidur/LoL-item-sets/issues/new)
-* Bug on the **item sets** : [submit here](https://github.com/Ilshidur/lol-item-sets-builder/issues/new)
+* Bug on the **item sets** : [submit here](https://github.com/Ilshidur/feeder.lol-item-sets-generator.org/issues/new)
 
 ## How to use
 - Download the [lastest version here](https://lol-item-sets-generator.org/downloads/sets-from-website)
