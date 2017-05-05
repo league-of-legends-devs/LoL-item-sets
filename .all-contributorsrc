@@ -8,16 +8,6 @@
   "commit": true,
   "contributors": [
     {
-      "login": "corylulu",
-      "name": "corylulu",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/510057?v=3",
-      "profile": "https://github.com/corylulu",
-      "contributions": [
-        "bug",
-        "code"
-      ]
-    },
-    {
       "login": "Ilshidur",
       "name": "Nicolas COUTIN",
       "avatar_url": "https://avatars2.githubusercontent.com/u/6564012?v=3",
@@ -27,6 +17,16 @@
         "code",
         "design",
         "doc"
+      ]
+    },
+    {
+      "login": "corylulu",
+      "name": "corylulu",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/510057?v=3",
+      "profile": "https://github.com/corylulu",
+      "contributions": [
+        "bug",
+        "code"
       ]
     }
   ]
