@@ -37,3 +37,13 @@ Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
 ## Contact
 
 Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-sets-generator.org) or [ilshidur@gmail.com](mailto:ilshidur@gmail.com).
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars0.githubusercontent.com/u/510057?v=3" width="100px;"/><br /><sub>corylulu</sub>](https://github.com/corylulu)<br />[🐛](https://github.com/Ilshidur/LoL-item-sets/issues?q=author%3Acorylulu "Bug reports") [💻](https://github.com/Ilshidur/LoL-item-sets/commits?author=corylulu "Code") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
