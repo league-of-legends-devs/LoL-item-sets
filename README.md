@@ -42,8 +42,8 @@ Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-se
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars0.githubusercontent.com/u/510057?v=3" width="100px;"/><br /><sub>corylulu</sub>](https://github.com/corylulu)<br />[🐛](https://github.com/Ilshidur/LoL-item-sets/issues?q=author%3Acorylulu "Bug reports") [💻](https://github.com/Ilshidur/LoL-item-sets/commits?author=corylulu "Code") |
-| :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/510057?v=3" width="100px;"/><br /><sub>corylulu</sub>](https://github.com/corylulu)<br />[🐛](https://github.com/Ilshidur/LoL-item-sets/issues?q=author%3Acorylulu "Bug reports") [💻](https://github.com/Ilshidur/LoL-item-sets/commits?author=corylulu "Code") | [<img src="https://avatars2.githubusercontent.com/u/6564012?v=3" width="100px;"/><br /><sub>Nicolas COUTIN</sub>](https://www.nicolas-coutin.fr)<br />[💬](#question-Ilshidur "Answering Questions") [💻](https://github.com/Ilshidur/LoL-item-sets/commits?author=Ilshidur "Code") [🎨](#design-Ilshidur "Design") [📖](https://github.com/Ilshidur/LoL-item-sets/commits?author=Ilshidur "Documentation") |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

@@ -16,6 +16,18 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "Ilshidur",
+      "name": "Nicolas COUTIN",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6564012?v=3",
+      "profile": "https://www.nicolas-coutin.fr",
+      "contributions": [
+        "question",
+        "code",
+        "design",
+        "doc"
+      ]
     }
   ]
 }
