@@ -16,6 +16,22 @@
         "question",
         "code",
         "design",
+        "doc",
+        "review",
+        "tool",
+        "infra"
+      ]
+    },
+    {
+      "login": "melchor629",
+      "name": "Melchor Garau Madrigal",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1056963?v=3",
+      "profile": "http://melchor9000.me",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "design",
         "doc"
       ]
     },
