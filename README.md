@@ -9,7 +9,7 @@ Please refer to the [TODO section](#TODO) for more details of the upcoming chang
 
 [![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases) [![Slack Status](https://slack.lol-item-sets-generator.org/badge.svg)](https://slack.lol-item-sets-generator.org/)
 
-Download and automatically install the lastest LoL item sets from the website : lol-item-sets-generator.org.
+Download the best -generated- League of Legends recommended items from the website https://lol-item-sets-generator.org.
 
 [CHANGE LOG](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md)
 
