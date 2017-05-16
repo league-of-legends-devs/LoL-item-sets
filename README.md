@@ -28,6 +28,8 @@ Download and automatically install the lastest LoL item sets from the website : 
 
 ## TODO
 
+> [Work in progress](https://github.com/orgs/league-of-legends-devs/projects/1)
+
 * Rewrite the app using [Electron](https://electron.atom.io), [React](https://facebook.github.io/react) and [Redux](http://redux.js.org)
 * Download the default item sets on user action. If the user is authenticated, also download his custom/favorite sets (no deletion of the current item sets)
 * Show the current website patch
