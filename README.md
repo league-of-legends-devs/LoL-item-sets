@@ -28,7 +28,7 @@ Download the best -generated- League of Legends recommended items from the websi
 
 ## TODO
 
-> [Work in progress](https://github.com/orgs/league-of-legends-devs/projects/1)
+> [Work in progress](https://github.com/league-of-legends-devs/LoL-item-sets/projects/1)
 
 * Rewrite the app using [Electron](https://electron.atom.io), [React](https://facebook.github.io/react) and [Redux](http://redux.js.org)
 * Download the default item sets on user action. If the user is authenticated, also download his custom/favorite sets (no deletion of the current item sets)
