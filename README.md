@@ -7,7 +7,9 @@ Please refer to the [TODO section](#TODO) for more details of the upcoming chang
 
 <hr/>
 
-[![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases) [![Slack Status](https://slack.lol-item-sets-generator.org/badge.svg)](https://slack.lol-item-sets-generator.org/)
+[![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases)
+[![Slack Status](https://slack.lol-item-sets-generator.org/badge.svg)](https://slack.lol-item-sets-generator.org/)
+[![Twitter Follow](https://img.shields.io/twitter/follow/LoL_item_sets.svg?style=social&label=Follow)](https://twitter.com/Unreal_IRCd)
 
 Download the best -generated- League of Legends recommended items from the website https://lol-item-sets-generator.org.
 
