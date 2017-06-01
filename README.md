@@ -1,12 +1,14 @@
 # LoL-item-sets
 
-[![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases)
+> Download and automatically install the lastest LoL item sets from the website : [lol-item-sets-generator.org](https://lol-item-sets-generator.org) (it will erase the previous item sets).<br/>
+Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
+
 [![Slack Status](https://slack.lol-item-sets-generator.org/badge.svg)](https://slack.lol-item-sets-generator.org/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/LoL_item_sets.svg?style=social&label=Follow)](https://twitter.com/Unreal_IRCd)
 
-Download and automatically install the lastest LoL item sets from the website : lol-item-sets-generator.org (it will erase the previous item sets)
+![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 
-Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
+[![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases)
 
 ![preview](preview.png)
 
