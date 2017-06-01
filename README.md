@@ -47,6 +47,8 @@ Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-se
 | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
+
 ## License
 
 The MIT License (MIT)
