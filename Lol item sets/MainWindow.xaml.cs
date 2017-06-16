@@ -169,7 +169,7 @@ namespace LoL_item_sets_XAML
 			if (this.cbAutoLaunch.IsChecked == true)
 			{
 				// Add the value in the registry so that the application runs at startup
-				rkApp.SetValue(registryAppName, AppDomain.CurrentDomain.BaseDirectory);
+				rkApp.SetValue(registryAppName, Application.ExecutablePath.ToString());
 			}
 			else
 			{
