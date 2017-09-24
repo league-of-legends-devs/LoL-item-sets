@@ -52,6 +52,8 @@ namespace LoL_item_sets_XAML
 		public MainWindow()
 		{
 			InitializeComponent();
+			ServicePointManager.Expect100Continue = true;
+			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 			init();
 			isInit = true;
 			updateCooldown(true);
