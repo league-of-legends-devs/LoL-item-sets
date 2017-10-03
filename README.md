@@ -1,21 +1,21 @@
 # LoL-item-sets
 
 > Download and automatically install the lastest LoL item sets from the website : [lol-item-sets-generator.org](https://lol-item-sets-generator.org) (it will erase the previous item sets).<br/>
-Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
+Mac version here : https://github.com/league-of-legends-devs/LoL-item-sets-Mac
 
 [![Slack Status](https://slack.lol-item-sets-generator.org/badge.svg)](https://slack.lol-item-sets-generator.org/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/LoL_item_sets.svg?style=social&label=Follow)](https://twitter.com/Unreal_IRCd)
 
 ![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)
 
-[![Downloads](https://img.shields.io/github/downloads/Ilshidur/LoL-item-sets/total.svg)](https://github.com/Ilshidur/LoL-item-sets/releases)
+[![Downloads](https://img.shields.io/github/downloads/league-of-legends-devs/LoL-item-sets/total.svg)](https://github.com/league-of-legends-devs/LoL-item-sets/releases)
 
 ![preview](preview.png)
 
 ## Reporting a bug
 
-* Bug on the **application** : [submit here](https://github.com/Ilshidur/LoL-item-sets/issues/new)
-* Bug on the **item sets** : [submit here](https://github.com/Ilshidur/feeder.lol-item-sets-generator.org/issues/new)
+* Bug on the **application** : [submit here](https://github.com/league-of-legends-devs/LoL-item-sets/issues/new)
+* Bug on the **item sets** : [submit here](https://github.com/league-of-legends-devs/feeder.lol-item-sets-generator.org/issues/new)
 
 ## How to use
 - Download the [lastest version here](https://lol-item-sets-generator.org/downloads/sets-from-website)
@@ -29,14 +29,7 @@ Mac version here : https://github.com/Ilshidur/LoL-item-sets-Mac
 - Windows Shell32
 - [MahApps.Metro](http://mahapps.com/)
 
-## ChangeLog : [here](https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md)
-
-## TODO
-
-* Notify the user when a new version is available (and use ClickOnce)
-* Better error messages
-* Downloading : progressbar and "downloading ..." messages in a "Progress dialog" dialog.
-* Add a pop-up warning the user when a new patch came out
+## ChangeLog : [here](https://github.com/league-of-legends-devs/LoL-item-sets/blob/master/CHANGELOG.md)
 
 ## Contact
 
@@ -45,7 +38,7 @@ Contact me at [ilshidur@lol-item-sets-generator.org](mailto:ilshidur@lol-item-se
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars2.githubusercontent.com/u/6564012?v=3" width="100px;"/><br /><sub>Nicolas COUTIN</sub>](https://www.nicolas-coutin.fr)<br />[💬](#question-Ilshidur "Answering Questions") [💻](https://github.com/Ilshidur/LoL-item-sets/commits?author=Ilshidur "Code") [🎨](#design-Ilshidur "Design") [📖](https://github.com/Ilshidur/LoL-item-sets/commits?author=Ilshidur "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/510057?v=3" width="100px;"/><br /><sub>corylulu</sub>](https://github.com/corylulu)<br />[🐛](https://github.com/Ilshidur/LoL-item-sets/issues?q=author%3Acorylulu "Bug reports") [💻](https://github.com/Ilshidur/LoL-item-sets/commits?author=corylulu "Code") |
+| [<img src="https://avatars2.githubusercontent.com/u/6564012?v=3" width="100px;"/><br /><sub>Nicolas COUTIN</sub>](https://www.nicolas-coutin.fr)<br />[💬](#question-Ilshidur "Answering Questions") [💻](https://github.com/league-of-legends-devs/LoL-item-sets/commits?author=Ilshidur "Code") [🎨](#design-Ilshidur "Design") [📖](https://github.com/league-of-legends-devs/LoL-item-sets/commits?author=Ilshidur "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/510057?v=3" width="100px;"/><br /><sub>corylulu</sub>](https://github.com/corylulu)<br />[🐛](https://github.com/league-of-legends-devs/LoL-item-sets/issues?q=author%3Acorylulu "Bug reports") [💻](https://github.com/league-of-legends-devs/LoL-item-sets/commits?author=corylulu "Code") |
 | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
