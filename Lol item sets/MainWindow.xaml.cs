@@ -234,12 +234,12 @@ namespace LoL_item_sets_XAML
 
 		private void lkGoToChangelog_Click(object sender, EventArgs e)
 		{
-			Process.Start("https://github.com/Ilshidur/LoL-item-sets/blob/master/CHANGELOG.md");
+			Process.Start("https://github.com/league-of-legends-devs/LoL-item-sets/blob/master/CHANGELOG.md");
 		}
 
 		private void lkGitHub_Click(object sender, EventArgs e)
 		{
-			Process.Start("https://github.com/Ilshidur/LoL-item-sets");
+			Process.Start("https://github.com/league-of-legends-devs/LoL-item-sets");
 		}
 
 		private void tmRefreshCooldown_Tick(object sender, EventArgs e)
